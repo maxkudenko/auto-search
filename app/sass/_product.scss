@@ -1,0 +1,12 @@
+div.product {
+  display: flex;
+
+  .description-container {
+    width: 40%;
+    padding-left: 25px;
+
+    .description {
+      margin-bottom: 15px;
+    }
+  }
+}
