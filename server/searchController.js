@@ -1,15 +1,16 @@
 const data = require("./data");
 
-exports.search = function (req, res) {
-  const resultArray = [];
+exports.search = (req, res) => {
   const { value } = req.query;
+  const result = [];
+
   if (value) {
-    for (let i = 0; i < data.length; i += 1) {
-      const c = data[i].name;
-      if (c.toLowerCase().includes(value.toLowerCase())) {
-        resultArray.push(data[i]);
+    data.forEach((item) => {
+      if (item.name.toLowerCase().includes(value.toLowerCase())) {
+        result.push(item);
       }
-    }
+    });
   }
-  res.json(resultArray);
+
+  res.json(result);
 };
